@@ -13,35 +13,18 @@ from pathlib import Path
 # 1. Project paths
 # =============================================================================
 
-project_path = Path(
-    r"C:\Users\lenovo\PycharmProjects\6400_blog_6"
-)
+REPO_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = REPO_ROOT / "data"
+CLEANED_DATA_PATH = DATA_DIR / "cleaned_data"
+MATCHED_DATA_PATH = DATA_DIR / "matched_data"
 
-cleaned_data_path = (
-    project_path
-    / "data"
-    / "cleaned_data"
-)
+individual_file = CLEANED_DATA_PATH / "individual_long.csv"
+parent_file = CLEANED_DATA_PATH / "parent_identification.csv"
 
-individual_file = (
-    cleaned_data_path
-    / "individual_long.csv"
-)
+database_path = MATCHED_DATA_PATH / "psid_matching.db"
+matched_output = MATCHED_DATA_PATH / "matched_parent_child.csv"
 
-parent_file = (
-    cleaned_data_path
-    / "parent_identification.csv"
-)
-
-database_path = (
-    cleaned_data_path
-    / "psid_matching.db"
-)
-
-matched_output = (
-    cleaned_data_path
-    / "matched_parent_child.csv"
-)
+MATCHED_DATA_PATH.mkdir(parents=True, exist_ok=True)
 
 
 # =============================================================================
@@ -92,7 +75,6 @@ missing_pid = [
 ]
 
 if missing_pid:
-
     raise ValueError(
         "The following PID variables are missing:\n"
         + "\n".join(missing_pid)
@@ -118,11 +100,9 @@ def make_person_id(
 ):
 
     if pd.isna(family_id) or pd.isna(person_number):
-
         return None
 
     if family_id == 0 or person_number == 0:
-
         return None
 
     return (
@@ -177,7 +157,6 @@ parent_data = parent_data[
 # =============================================================================
 
 if database_path.exists():
-
     database_path.unlink()
 
 connection = sqlite3.connect(
@@ -629,3 +608,6 @@ print(
 # =============================================================================
 # END
 # =============================================================================
+
+if __name__ == "__main__":
+    pass

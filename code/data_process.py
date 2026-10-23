@@ -1,4 +1,3 @@
-
 # =============================================================================
 # 01_data_processing.py
 # PSID Blog 6
@@ -13,21 +12,19 @@ from pathlib import Path
 # 1. Project paths
 # =============================================================================
 
-project_path = Path(
-    r"C:\Users\lenovo\PycharmProjects\6400_blog_6"
-)
+REPO_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = REPO_ROOT / "data"
+RAW_DATA_PATH = DATA_DIR / "raw_data"
+CLEANED_DATA_PATH = DATA_DIR / "cleaned_data"
 
-raw_data_path = project_path / "data" / "raw_data"
-cleaned_data_path = project_path / "data" / "cleaned_data"
+individual_file = RAW_DATA_PATH / "individual_data.csv"
+parent_id_file = RAW_DATA_PATH / "parent_identification.txt"
 
-individual_file = raw_data_path / "individual_data.csv"
-parent_id_file = raw_data_path / "parent_identification.txt"
-
-individual_output = cleaned_data_path / "individual_long.csv"
-parent_id_output = cleaned_data_path / "parent_identification.csv"
+individual_output = CLEANED_DATA_PATH / "individual_long.csv"
+parent_id_output = CLEANED_DATA_PATH / "parent_identification.csv"
 
 # Create output folder if it does not exist
-cleaned_data_path.mkdir(parents=True, exist_ok=True)
+CLEANED_DATA_PATH.mkdir(parents=True, exist_ok=True)
 
 # Check input files
 if not individual_file.exists():
@@ -397,7 +394,7 @@ print(individual_long.head())
 # PID4-PID5  : Biological mother identifier components
 # PID23-PID24: Biological father identifier components
 #
-# Do NOT use sep=r'\\s+' or split() to read this file.
+# Do NOT use sep=r'\s+' or split() to read this file.
 # The original TXT must be read using its fixed-width field layout.
 # =============================================================================
 
@@ -599,3 +596,7 @@ print("\nParent identification data shape:")
 print(parent_identification.shape)
 
 print("\nStage 1 completed successfully.")
+
+
+if __name__ == "__main__":
+    pass

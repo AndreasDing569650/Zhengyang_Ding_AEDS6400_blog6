@@ -14,12 +14,15 @@ from pathlib import Path
 # 1. Project paths
 # =============================================================================
 
-project_path = Path(r"C:\Users\lenovo\PycharmProjects\6400_blog_6")
+REPO_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = REPO_ROOT / "data"
+MATCHED_DATA_PATH = DATA_DIR / "matched_data"
+RESULTS_PATH = REPO_ROOT / "result"
 
-cleaned_data_path = project_path / "data" / "cleaned_data"
+matched_file = MATCHED_DATA_PATH / "matched_parent_child.csv"
+results_file = RESULTS_PATH / "regression_results.csv"
 
-matched_file = cleaned_data_path / "matched_parent_child.csv"
-results_file = cleaned_data_path / "regression_results.csv"
+RESULTS_PATH.mkdir(parents=True, exist_ok=True)
 
 
 # =============================================================================
@@ -217,3 +220,6 @@ print(results_file)
 # =============================================================================
 # END
 # =============================================================================
+
+if __name__ == "__main__":
+    pass
