@@ -15,6 +15,7 @@ Place the source files in data/raw_data/. The PSID files must be obtained throug
 
 ## Repository Structure
 
+'''text
 6400_blog_6/
 ├── data/
 │   ├── raw_data/
@@ -35,6 +36,7 @@ Place the source files in data/raw_data/. The PSID files must be obtained throug
 │   └── data_analysis.py
 ├── blog6.qmd
 └── README.md
+'''
 
 ## Data Processing and Analysis Workflow
 
