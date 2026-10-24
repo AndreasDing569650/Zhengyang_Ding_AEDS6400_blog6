@@ -40,7 +40,7 @@ Zhengyang_Ding_AEDS6400_blog6/
 ├── result/
 │   └── regression_results.csv
 │
-├── README.md
+└── README.md
 ```
 
 ## Data Processing and Analysis Workflow
@@ -88,5 +88,3 @@ Run the scripts in order from the project root:
 3. `python code/data_analysis.py`
 
 Before running the scripts, confirm that the project path configured at the beginning of each script points to the local repository directory. The scripts expect the raw source files under `data/raw_data/`, then generate cleaned intermediate data under `data/cleaned_data/`, matched outputs under `data/matched_data/`, and regression results in `result/`.
-
-The repository is designed to be reproducible using the two PSID files already stored in `data/raw_data/`.
