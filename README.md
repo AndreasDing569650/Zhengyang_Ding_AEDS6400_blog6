@@ -71,11 +71,11 @@ Outputs:
 
 The third script reads the matched data, logs both parent and child family income, applies positivity checks, and estimates two log-log regressions:
 
-\[
-\log(\text{ChildIncome}_i) = \alpha + \beta \log(\text{ParentIncome}_i) + \epsilon_i.
-\]
+$$
+\log(\text{ChildIncome}_i) = \alpha + \beta \log(\text{ParentIncome}_i) + \epsilon_i
+$$
 
-One model uses 2022 family income, and the other uses the average of 2020 and 2022 family income. The coefficient \(\beta\) is the intergenerational income elasticity (IGE), which is reported in the final results table.
+One model uses 2022 family income, and the other uses the average of 2020 and 2022 family income. The coefficient $\beta$ is the intergenerational income elasticity (IGE), which is reported in the final results table.
 
 Outputs:
 - `result/regression_results.csv`
@@ -88,3 +88,5 @@ Run the scripts in order from the project root:
 3. `python code/data_analysis.py`
 
 Before running the scripts, confirm that the project path configured at the beginning of each script points to the local repository directory. The scripts expect the raw source files under `data/raw_data/`, then generate cleaned intermediate data under `data/cleaned_data/`, matched outputs under `data/matched_data/`, and regression results in `result/`.
+
+The repository is designed to be reproducible using the two PSID files already stored in `data/raw_data/`.
