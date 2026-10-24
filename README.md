@@ -12,9 +12,7 @@ The analysis uses two PSID source files stored under `data/raw_data/`:
 - `individual_data.csv`: individual-level data containing identifiers, family identifiers, age, and family-level total income for the selected years.
 - `parent_identification.txt`: fixed-width parent-identification records linking children to their biological mother and father.
 
-The income measure is total family income in the family in which a person is observed, not the person's individual labor earnings. The single-year specification uses 2022 family income, while the multi-year specification uses the average of 2020 and 2022 family income.
-
-The raw PSID files are not included in this repository and must be obtained through the appropriate PSID access process. Users should follow the data provider's terms when storing or redistributing the files.
+The income measure is total family income for the family in which a person is observed, not the person's individual labor earnings. The single-year specification uses 2022 family income, while the multi-year specification uses the average of 2020 and 2022 family income. In addition, we do not count parent-child pairs that live in the same family when constructing income measures for the analysis.
 
 ## Repository Structure
 
@@ -43,8 +41,6 @@ Zhengyang_Ding_AEDS6400_blog6/
 │   └── regression_results.csv
 │
 ├── README.md
-│
-└── .gitignore
 ```
 
 ## Data Processing and Analysis Workflow
@@ -93,4 +89,4 @@ Run the scripts in order from the project root:
 
 Before running the scripts, confirm that the project path configured at the beginning of each script points to the local repository directory. The scripts expect the raw source files under `data/raw_data/`, then generate cleaned intermediate data under `data/cleaned_data/`, matched outputs under `data/matched_data/`, and regression results in `result/`.
 
-The repository is designed to be fully reproducible with the PSID data files once they are placed in the expected raw-data folder.
+The repository is designed to be reproducible using the two PSID files already stored in `data/raw_data/`.
