@@ -15,28 +15,30 @@ Place the source files in data/raw_data/. The PSID files must be obtained throug
 
 ## Repository Structure
 
-'''text
-6400_blog_6/
-├── data/
-│   ├── raw_data/
-│   │   ├── individual_data.csv
-│   │   └── parent_identification.txt
-│   └── cleaned_data/
-│       ├── individual_long.csv
-│       ├── parent_identification.csv
-│       ├── psid_matching.db
-│       └── matched_parent_child.csv
-├── result/
-│   ├── regression_results.csv
-│   ├── single_year_regression.txt
-│   └── multi_year_regression.txt
+```text
+Zhengyang_Ding_AEDS6400_blog5/
+│
 ├── code/
-│   ├── data_process.py
-│   ├── data_SQLmatch.py
-│   └── data_analysis.py
-├── blog6.qmd
+│   ├── data_variable.R
+│   ├── data_map.R
+│   └── data_analysis.R
+│
+├── data/
+│   ├── county_income_2014_2024.csv
+│   └── county_shapefile/
+|       ├── tl_2024_us_county.cpg
+|       ├── tl_2024_us_county.dbf
+|       ├── tl_2024_us_county.prj
+|       ├── tl_2024_us_county.shp
+|       └── tl_2024_us_county.shx
+│
+├── figure/
+│   ├── income_map_2024.png
+│   ├── income_quintile_map_2014.png
+│   └── income_quintile_map_2024.png
+│
 └── README.md
-'''
+```
 
 ## Data Processing and Analysis Workflow
 
