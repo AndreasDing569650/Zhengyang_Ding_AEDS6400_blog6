@@ -144,7 +144,7 @@ After successful execution, the project should contain:
 - matched data under `data/matched_data/`
 - final regression summary under `result/regression_results.csv`
 
-## Notes on Reproducibility
+### Notes on Reproducibility
 
 The scripts are written to detect the project root automatically using `Path(__file__).resolve().parents[1]`, so you generally do not need to manually edit the working directory or file paths before running them. If you execute the commands from the repository root, the analysis should work as expected.
 
