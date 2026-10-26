@@ -34,6 +34,7 @@ The final regression output is written to:
 Zhengyang_Ding_AEDS6400_blog6/
 ├── README.md
 ├── requirements.txt
+├── .gitignore
 ├── code/
 │   ├── data_process.py
 │   ├── data_SQLmatch.py
